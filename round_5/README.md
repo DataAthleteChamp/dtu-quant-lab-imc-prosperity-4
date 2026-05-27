@@ -38,3 +38,33 @@ Algorithmic PnL curve from the live submission — the smooth monotonic climb to
 - The bulk of the live PnL came from one product: `OXYGEN_SHAKE_CHOCOLATE` at +587,831, captured by a plain inside-spread market-making post on a dislocated live book. Cluster overlays produced small positive contributions on most other clusters; MICROCHIP residual was a net drag.
 - Worst-day-mode discipline (the worst single backtest day must be positive) survived to R5 and is the reason this trader was reliable enough to finish 7th rather than 200th. We had a higher-EV variant in development that we did not ship because its worst-day backtest was negative.
 - The structural observation we are most proud of is the PEBBLES basket-sum constraint (basket sum ≈ 50,000 with σ ≈ 2.8). It contributed +17,529 — capped by the 10-unit-per-product position limit — but is the cleanest piece of alpha in the round and the lesson we will carry into the next competition.
+
+## Analysis on shipped data
+
+<p align="center">
+  <img src="../docs/plots/round_5/product_universe.png" alt="Round 5 product universe — 50 names in 10 clusters" width="92%">
+</p>
+
+50 products, colour-coded by cluster, on day-2 mid-price range. The structural variety lives in the cluster, not in the price level.
+
+<p align="center">
+  <img src="../docs/plots/round_5/pebbles_basket_constraint.png" alt="PEBBLES basket-sum constraint" width="100%">
+</p>
+
+`PEBBLES_XS + S + M + L + XL` ≈ 50,000 with σ ≈ 2.8 across 30,000 pooled ticks. The cleanest mathematical alpha in any IMC Prosperity 4 round. PEBBLES_XL has correlation −0.7 to −0.9 against the four smaller pebbles, so any breach of the constraint signals a tradeable mispricing on the inverse leg.
+
+<p align="center">
+  <img src="../docs/plots/round_5/oxygen_shake_chocolate.png" alt="OXYGEN_SHAKE_CHOCOLATE mid price" width="100%">
+</p>
+
+OXYGEN_SHAKE_CHOCOLATE — the +587,831 carry product, 84% of the round. A wide, persistent book that absorbed an inside-spread market-making post tick after tick on the live day.
+
+<p align="center">
+  <img src="../docs/plots/round_5/cluster_correlations.png" alt="Cluster-mean return correlation heatmap" width="68%">
+</p>
+
+The 10 cluster-mean returns are essentially uncorrelated. This off-diagonal independence is the structural justification for the cluster-strategy composition pattern: every cluster runs as an isolated sub-strategy with its own state, and bugs in one cluster can't bleed into another.
+
+## In hindsight
+
+We had a higher-EV variant in development that we did not ship because its worst-day backtest was negative — the worst-day-mode rule literally saved Round 5. If we had relaxed the rule we would have come out of the round with a much wider PnL distribution centred lower. The other regret is that we spent the first half of R5 designing the cluster framework and only the second half on alpha — if the framework had existed at the start of R3 we would have caught the HYDROGEL break before it cost us 600 places.

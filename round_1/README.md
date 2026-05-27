@@ -31,3 +31,21 @@ Algorithmic PnL curve from the live submission:
 
 - A fixed-FV anchor with micro-price refinement beats an Avellaneda–Stoikov reservation price on a strongly pegged product (we tried both; A–S position-skew on OSMIUM cost us 16,593 PnL in backtest before we reverted).
 - The honest way to validate any candidate trader is a worst-day-mode rule: the worst single backtest day must be positive. This rule killed about 80% of the ideas surveyed for this round.
+
+## Analysis on shipped data
+
+<p align="center">
+  <img src="../docs/plots/round_1/osmium_stationarity.png" alt="OSMIUM mid-price distribution and autocorrelation" width="100%">
+</p>
+
+OSMIUM mids are tight around the 10,000 peg; AR(1) on de-meaned mids is near zero (effectively iid noise around the peg). Sub-tick mean-reversion — textbook market-making conditions.
+
+<p align="center">
+  <img src="../docs/plots/round_1/pepper_drift.png" alt="PEPPER deterministic drift" width="100%">
+</p>
+
+PEPPER's drift is +0.00103 per timestamp on day 0 — small but persistent enough to dominate any symmetric MM. Our shipped trader skews inventory asymmetrically: long with the trend, short against it.
+
+## In hindsight
+
+We left edge on the table on PEPPER by sizing the inventory skew conservatively — a less timid drift coefficient would have improved the +67,585 algorithmic return. On the manual side, the +85,000 is exactly the theoretical maximum from hitting both sawtooth peaks, so the only thing to second-guess there is whether the reserve-curve probe budget was worth it (it was: Augusto's pre-submission micro-bids confirmed the sawtooth shape).

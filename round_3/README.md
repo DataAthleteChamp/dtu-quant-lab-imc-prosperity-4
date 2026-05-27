@@ -38,3 +38,21 @@ Algorithmic PnL curve from the live submission — the volatility around 0 makes
 - A textbook static MM that worked on OSMIUM (pegged) **broke catastrophically** on HP when the mid drifted 70 ticks over a single session — the strategy kept buying into the drawdown. The fix (a 3-state PINNED / TRENDING / NOISY regime detector with a rolling-median anchor and inventory skew that leans **with** the drift) was developed too late for Round 3 and only made it into the R3-into-R4 trader.
 - Voucher market-making with a flat IV anchor + parabolic smile correction is the right structure; our R3 IV anchor was set too conservatively and we missed most of the available edge. Round 4 tightened it.
 - A bad algorithmic round can still be saved by a disciplined manual operator. Augusto's sealed-bid auction work in R3 turned what would have been an exit into a survival round.
+
+## Analysis on shipped data
+
+<p align="center">
+  <img src="../docs/plots/round_3/hydrogel_drift.png" alt="Hydrogel within-session drift" width="100%">
+</p>
+
+HYDROGEL_PACK shows session-internal drift of 35+ ticks — a regime our OSMIUM strategy was never designed for. The static MM kept buying into the drawdown for the full session. The 3-state regime detector that fixes this only shipped in Round 4.
+
+<p align="center">
+  <img src="../docs/plots/round_3/vev_vol_smile.png" alt="VEV voucher chain implied-vol smile" width="100%">
+</p>
+
+The VEV chain implies a clear right-skewed smile. Our R3 trader used a flat σ = 0.20 anchor with no parabolic correction — we missed most of the available edge. The parabolic correction is the central R4 voucher upgrade.
+
+## In hindsight
+
+The R3 algorithmic +3,686 is the single most expensive mistake of the campaign. We had the data to detect the HP regime break on the morning the round opened (the rolling-median anchor takes ~20 lines of code), but we were spending iteration budget on voucher theory instead of triage on the new spot product. The lesson — **whenever a new product is added, build the diagnostic before you build the strategy** — is the one that most directly drove the Round 5 cluster-strategy architecture.
