@@ -1,0 +1,17 @@
+# Reproducing the DTU Quant Lab IMC Prosperity 4 results
+#
+# Tested with Python 3.11 / 3.12 / 3.13.
+#
+# The five trader.py files in round_*/algorithmic/ depend only on:
+#   - prosperity4btest 5.0.0   (the open-source backtester that ships
+#     the datamodel and runner that the IMC simulator uses)
+#
+# The dashboard in tools/ additionally needs Plotly Dash + pandas + numpy.
+
+prosperity4btest==5.0.0
+
+# Dashboard only (optional)
+dash>=2.18
+plotly>=5.20
+pandas>=2.2
+numpy>=1.26

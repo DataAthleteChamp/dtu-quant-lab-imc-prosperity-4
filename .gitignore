@@ -1,0 +1,34 @@
+# Byte-compiled / optimized
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artefacts
+dist/
+build/
+*.egg-info/
+
+# Backtester output
+backtests/
+*.log
+!.gitkeep
+
+# Node (dashboard)
+node_modules/
+
+# Archives (kept out of git; CSVs ship unzipped)
+*.zip

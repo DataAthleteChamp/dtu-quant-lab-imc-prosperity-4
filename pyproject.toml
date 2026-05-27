@@ -1,0 +1,45 @@
+[project]
+name = "dtu-quant-lab-imc-prosperity-4"
+version = "1.0.0"
+description = "Algorithmic and manual trading strategies from DTU Quant Lab's 28th-place finish in IMC Prosperity 4."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Jakub Piotrowski" },
+    { name = "Krish Waghresha" },
+    { name = "Pedro Diniz" },
+    { name = "Augusto Villoldo" },
+    { name = "Mark van Damme" },
+]
+keywords = [
+    "imc-prosperity-4",
+    "algorithmic-trading",
+    "market-making",
+    "quantitative-finance",
+    "high-frequency-trading",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Office/Business :: Financial :: Investment",
+]
+dependencies = [
+    "prosperity4btest==5.0.0",
+]
+
+[project.optional-dependencies]
+dashboard = [
+    "dash>=2.18",
+    "plotly>=5.20",
+    "pandas>=2.2",
+    "numpy>=1.26",
+]
+
+[project.urls]
+Repository = "https://github.com/DataAthleteChamp/dtu-quant-lab-imc-prosperity-4"
+"IMC Prosperity" = "https://prosperity.imc.com"

@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you reference this work, please cite the team and the IMC Prosperity 4 campaign."
+title: "DTU Quant Lab — IMC Prosperity 4 (28th place worldwide)"
+abstract: >
+  Algorithmic and manual trading strategies developed by team DTU Quant Lab during
+  IMC Prosperity 4. The team finished 28th out of 18,803 worldwide, 31st in
+  algorithmic trading, 10th in Europe, and 1st in Denmark. This repository
+  documents the shipped traders, the per-round PnL, and the academic literature
+  consulted (and frequently rejected) along the way.
+type: software
+license: MIT
+repository-code: "https://github.com/DataAthleteChamp/dtu-quant-lab-imc-prosperity-4"
+date-released: 2025-05-27
+keywords:
+  - imc-prosperity-4
+  - algorithmic-trading
+  - market-making
+  - quantitative-finance
+authors:
+  - family-names: Piotrowski
+    given-names: Jakub
+    affiliation: Technical University of Denmark (DTU)
+  - family-names: Waghresha
+    given-names: Krish
+    affiliation: Technical University of Denmark (DTU)
+  - family-names: Diniz
+    given-names: Pedro
+    affiliation: Technical University of Denmark (DTU)
+  - family-names: Villoldo
+    given-names: Augusto
+    affiliation: Technical University of Denmark (DTU)
+  - family-names: van Damme
+    given-names: Mark
+    affiliation: Technical University of Denmark (DTU)
