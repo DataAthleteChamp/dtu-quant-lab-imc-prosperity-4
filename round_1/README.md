@@ -23,6 +23,10 @@ See [`algorithmic/`](algorithmic/) and [`manual/`](manual/) for the full write-u
 
 ![Round 1 detailed results](../docs/results/round_1.png)
 
+Algorithmic PnL curve from the live submission:
+
+![Round 1 algorithmic PnL](../docs/results/algo_round_1.png)
+
 ## What we learned
 
 - A fixed-FV anchor with micro-price refinement beats an Avellaneda–Stoikov reservation price on a strongly pegged product (we tried both; A–S position-skew on OSMIUM cost us 16,593 PnL in backtest before we reverted).

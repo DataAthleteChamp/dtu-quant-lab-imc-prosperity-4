@@ -29,6 +29,10 @@ See [`algorithmic/`](algorithmic/) and [`manual/`](manual/).
 
 ![Round 3 detailed results](../docs/results/round_3.png)
 
+Algorithmic PnL curve from the live submission — the volatility around 0 makes the regime visually obvious:
+
+![Round 3 algorithmic PnL](../docs/results/algo_round_3.png)
+
 ## What we learned
 
 - A textbook static MM that worked on OSMIUM (pegged) **broke catastrophically** on HP when the mid drifted 70 ticks over a single session — the strategy kept buying into the drawdown. The fix (a 3-state PINNED / TRENDING / NOISY regime detector with a rolling-median anchor and inventory skew that leans **with** the drift) was developed too late for Round 3 and only made it into the R3-into-R4 trader.

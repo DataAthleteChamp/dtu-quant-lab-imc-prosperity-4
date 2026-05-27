@@ -28,6 +28,10 @@ See [`algorithmic/`](algorithmic/) and [`manual/`](manual/).
 
 ![Round 5 detailed results](../docs/results/round_5.png)
 
+Algorithmic PnL curve from the live submission — the smooth monotonic climb to +702,835 is the OXYGEN_SHAKE_CHOCOLATE carry compounding through the day:
+
+![Round 5 algorithmic PnL](../docs/results/algo_round_5.png)
+
 ## What we learned
 
 - The cluster-strategy architecture (one abstract `ClusterStrategy` base class and one concrete subclass per cluster, composed by a master `Trader`) let us ship multiple parallel strategies with isolated state — far more iteration throughput per hour than the monolithic R3/R4 file allowed.

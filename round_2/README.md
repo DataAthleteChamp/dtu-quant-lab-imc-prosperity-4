@@ -20,6 +20,10 @@ See [`algorithmic/`](algorithmic/) and [`manual/`](manual/).
 
 ![Round 2 detailed results](../docs/results/round_2.png)
 
+Algorithmic PnL curve from the live submission:
+
+![Round 2 algorithmic PnL](../docs/results/algo_round_2.png)
+
 ## What we learned
 
 - Cumulative PnL of **441,929** XIRECs after R2 cleared the qualifier threshold (top 2,000 advance to finals). The portal then **zeroes the cumulative** in R3, which we did not fully internalise at the time — and that fresh-start reset is one reason a single bad finals round (R3) felt much more catastrophic than it really was.

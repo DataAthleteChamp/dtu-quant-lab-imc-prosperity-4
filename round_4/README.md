@@ -20,6 +20,10 @@ See [`algorithmic/`](algorithmic/) and [`manual/`](manual/).
 
 ![Round 4 detailed results](../docs/results/round_4.png)
 
+Algorithmic PnL curve from the live submission — flat-with-drift, characteristic of a parameter sweep on an already-shaped strategy:
+
+![Round 4 algorithmic PnL](../docs/results/algo_round_4.png)
+
 ## What we learned
 
 - After spending Round 3 reading literature on PIN (Glosten–Milgrom), VPIN (Easley–López de Prado–O'Hara), Cartea–Jaimungal dynamic spread, Hull–White stochastic volatility, Cont–Kukanov liquidation, and per-counterparty profiling, almost none of it shipped. The R4 edits were a small set of parameter sweeps over the existing R3 trader.
