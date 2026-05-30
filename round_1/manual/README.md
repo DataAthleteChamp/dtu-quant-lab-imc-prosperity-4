@@ -8,7 +8,16 @@
 
 ## Challenge
 
-Two tradable goods. For each, choose a single buy order at a chosen price (positive premium over reference) and a chosen volume. The Prosperity engine paid each order against an undisclosed PnL-vs-volume curve with a sawtooth shape — picking the local maximum of the curve mattered as much as picking the right price.
+This challenge mirrors a walrasian auction. 
+The challenge asks you to find a price and volume of 2 stocks, and proposed bids by others for those two stocks. 
+After a bid is submitted, the auction decides a clearance price where a bid is sold if the bid is larger than the clearance price, and an ask is given if the ask is lower than the clearance. 
+Additionally, any bid unsold will be sold to the auction house at 30 for Dryland Flax and 20 for Ember Mushroom.
+There is a 0.10 fee on each unsold ember mushroom stock.
+
+## Strategy
+
+This is a brute force optimisation problem, where the opposing bids and asks were given to us.
+We decided to use Excel, where we sweeped over all possible volumes for a given guess and chose the one with the highest PnL.
 
 ## Our submission
 
@@ -26,5 +35,5 @@ Augusto's choice landed on the apex of both sawtooth functions: the Dryland Flax
 
 ## Lessons
 
-- For sawtooth payoff structures with undisclosed reserve curves, the modal value of the population's bid distribution is rarely the optimum. Augusto solved by exhaustively evaluating each integer volume bin against the published feedback graph.
+- Augusto solved by exhaustively evaluating each integer volume bin against the published feedback graph.
 - Volume sizing was the dominant variable; the price premium was a one-tick decision.
