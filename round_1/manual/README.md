@@ -16,7 +16,7 @@ There is a 0.10 fee on each unsold ember mushroom stock.
 
 ## Strategy
 
-This is a brute force optimisation problem, where the opposing bids and asks were given to us.
+This is a simple optimisation problem, where the opposing bids and asks were given to us.
 Note that if the volume is small enough, that you can find the clearing price where the amount of bids lower than a value match the volume of asks higher than that value. 
 That knowledge allows you to easily find the volume needed at a certain price to force a certain clearance price, and the PnL of each, as you can just bid the differential of total bid lower or equal to the clearance and the ask higher than the clearance, after you subtract one to force that clearance price.  
 We decided to use Excel, where we sweeped over all possible clearance prices with their respective volumes for a given guess and chose the one with the highest PnL.
