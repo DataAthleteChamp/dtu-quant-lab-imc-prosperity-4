@@ -8,7 +8,19 @@
 
 ## Challenge
 
-Nine themed volcanic and phoenix-related goods to allocate between buy and sell sides, choosing a percentage of capital per leg. Each trade incurred an 8% fee on the invested capital regardless of direction. The portfolio was capped at 100% total allocation (we spent 50%).
+We are given 1,000,000 XIRECs, a variety of stocks and a poster providing news stories related to the stocks. 
+We need to decide a distribution of investment into each option (buy or sell).
+Not only are the stocks going to to vary based on their volatilty, but also on the bids of other competitors (if everyone buys a stock, it goes up further). 
+Each trade incurred an 8% fee on the invested capital regardless of direction. 
+The portfolio was capped at 100% total allocation (we spent 50%).
+
+<img src="../../docs/plots/round_5/AshFlowAlpha.png" alt="AshFlowAlpha.png" width="300">
+
+## Strategy
+
+We decided to play it methodically rather than go all in on the stocks that seemed safe. 
+We kept strong diversity and didn't use the entire budget to keep fees reasonable.
+We did however invest more in stocks that were more strongly signaled in the informational poster to increase potential profits while maintaining a principled, diversified portfolio.
 
 ## Our submission
 
