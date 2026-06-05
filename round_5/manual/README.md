@@ -11,15 +11,15 @@
 We are given 1,000,000 XIRECs, a variety of stocks and a poster providing news stories related to the stocks,
 and need to decide a distribution of investment into each option (buy or sell).
 Not only are the stocks going to to vary based on their volatilty, but also on the bids of other competitors (if everyone buys a stock, it goes up further). 
-Each trade incurred an 8% fee on the invested capital regardless of direction. 
-
+Each trade incurred a fee which is $(volume_{specific})^2*budget_{tot}$, regardless of direction.
 
 <img src="../../docs/plots/round_5/AshFlowAlpha.png" alt="AshFlowAlpha.png" width="300">
 
 ## Strategy
 
 We decided to play it methodically rather than go all in on the stocks that seemed safe. 
-We kept strong diversity and didn't use the entire budget to keep fees reasonable (We limited ourselves to 50%).
+We didn't use the entire budget to keep fees reasonable, since fees go up cubed with total budget (Based on specific volume squared and total budget).
+Additionally, we kept strong diversity to limit the fees based on specific volume, and to reduce risk.
 We did however invest more in stocks that were more strongly signaled in the informational poster to increase potential profits while maintaining a principled, diversified portfolio.
 
 ## Our submission
@@ -45,5 +45,5 @@ Lava cake was the single largest winner (+44,283) and the entire reason the manu
 
 ## Lessons
 
-- The 8% fee bites hardest on neutral positions. A handful of low-edge trades (Ashes of the Phoenix, Magma ink, Scoria paste) gave back capital to fees that could have been concentrated into Lava cake or Thermalite core.
+- The fee bites hardest on neutral positions. A handful of low-edge trades (Ashes of the Phoenix, Magma ink, Scoria paste) gave back capital to fees that could have been concentrated into Lava cake or Thermalite core.
 - The choice to invest only 50% of capital was correct in expectation but conservative — by the final round we were already locked into a top-30 algorithmic finish and the manual side carried less weight in the total.
