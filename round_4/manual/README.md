@@ -2,13 +2,26 @@
 
 | | |
 |---|---|
-| Final live PnL | **+23,566** XIRECs |
+| Fina<br/>l live PnL | **+23,566** XIRECs |
 | Rank | 699 |
 | Lead | Augusto Villoldo |
 
 ## Challenge
 
-A single-shot options chain on a fictional underlying `AC`. Six legs were tradable: deep-ITM calls, ATM calls and puts at multiple expiries, and a forward-style underlier `KO`. The expected-value calculations depended on the participant's view of the underlying's terminal distribution.
+We are given a fictional underlying `AC`, and both puts and calls, binary and chooser puts, and a forward-style underlier `KO` to either buy, do nothing, or sell.
+We are given the volatility of the stock (251%), and the strike / time to expiry.
+Note that there are only 5 trading days in a week, hence 252 trading days in a year.
+<img src="../../docs/plots/round_5/manual1.png" width="800">
+<img src="../../docs/plots/round_5/manual2.png" width="800">
+<img src="../../docs/plots/round_5/manual3.png" width="800">
+
+## Strategy
+
+Our strategy involved calculating which options are expected to be in the money and which aren't. 
+We then went all in all positive ev options.
+
+We used monte carlo simulation to calculate if the options were expected to make a profit.
+Doing it in simulation rather than via analysis mirrors how the competition does the calculations (5 trading days a week with 4 steps a day), and reduces the risk of an incorrect derivation.
 
 ## Our submission
 

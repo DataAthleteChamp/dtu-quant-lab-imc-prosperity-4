@@ -13,7 +13,7 @@ and need to decide a distribution of investment into each option (buy or sell).
 Not only are the stocks going to to vary based on their volatilty, but also on the bids of other competitors (if everyone buys a stock, it goes up further). 
 Each trade incurred a fee which is $(volume_{specific})^2*budget_{tot}$, regardless of direction.
 
-<img src="../../docs/plots/round_5/AshFlowAlpha.png" alt="AshFlowAlpha.png" width="300">
+<img src="../../docs/plots/round_5/AshFlowAlpha.png" width="500">
 
 ## Strategy
 
