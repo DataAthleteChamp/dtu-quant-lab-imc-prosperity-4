@@ -12,7 +12,11 @@ This challenge mirrors a walrasian auction.
 The challenge asks you to find a price and volume of 2 stocks, and proposed bids by others for those two stocks. 
 After a bid is submitted, the auction decides a clearance price where a bid is sold if the bid is larger than the clearance price, and an ask is given if the ask is lower than the clearance. 
 Additionally, any bid unsold will be sold to the auction house at 30 for Dryland Flax and 20 for Ember Mushroom.
-There is a 0.10 fee on each unsold ember mushroom stock.
+There is a 0.10 fee on each ember mushroom stock.
+Dryland Flax:
+![manual1.png](../../docs/plots/round_1/manual1.png)
+Ember Mushroom:
+![manual2.png](../../docs/plots/round_1/manual2.png)
 
 ## Strategy
 
